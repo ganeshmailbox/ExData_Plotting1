@@ -5,7 +5,6 @@ dataSet <- data[data$Date == "1/2/2007" | data$Date == "2/2/2007",]
 dataSet$datetime<-as.POSIXct(paste(dataSet$Date,dataSet$Time), format="%d/%m/%Y %H:%M:%S")
 
 ## Create and write the histogram
-png("plot1.png")
-hist(dataSet$Global_active_power, col="red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
+png("plot2.png")
+plot(dataSet$datetime,dataSet$Global_active_power,type="l",xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()
-#plot(data$datetime,data$power,type="l", xlab="", ylab="Global Active Power (kilowatts)")
